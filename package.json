@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --inspect index.js localhost 8080",
+    "start": "nodemon --inspect index.js localhost 7542",
     "simple-start": "SET PORT=8765 && node index.js"
   },
   "author": "",

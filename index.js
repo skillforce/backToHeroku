@@ -5,14 +5,14 @@ const users = require('./routes/users')
 const app = express()
 const port = 7542;
 
-// const mongoose = require('mongoose')
-// mongoose.connect('mongodb://localhost:27017/users')
-// const db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error: '));
-// db.once('open', function () {
-//
-// })
+const mongoose = require('mongoose');
+const uri = 'mongodb+srv://skillforce:7401642D@cluster0.2tisn.mongodb.net/Cluster0?retryWrites=true&w=majority';
+mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error: '));
+db.once('open', function () {
 
+})
 
 
 app.use(cors());
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-// app.use('/users', users)
+app.use('/users', users)
 
 app.get('/tasks', (req, res) => {
     res.send('tasks')
